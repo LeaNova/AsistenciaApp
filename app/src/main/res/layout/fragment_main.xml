@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainFragment">
+
+    <TextView
+        android:id="@+id/Nombre_H"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="64dp"
+        android:text="Nombre: "
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNombre_H"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text=" "
+        app:layout_constraintBottom_toBottomOf="@+id/Nombre_H"
+        app:layout_constraintStart_toEndOf="@+id/Nombre_H" />
+
+    <TextView
+        android:id="@+id/Apellido_H"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Apellido: "
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Nombre_H"
+        app:layout_constraintTop_toBottomOf="@+id/Nombre_H" />
+
+    <TextView
+        android:id="@+id/tvApellido_H"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintBottom_toBottomOf="@+id/Apellido_H"
+        app:layout_constraintStart_toEndOf="@+id/Apellido_H" />
+
+    <TextView
+        android:id="@+id/Dni_H"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="DNI: "
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Apellido_H"
+        app:layout_constraintTop_toBottomOf="@+id/Apellido_H" />
+
+    <TextView
+        android:id="@+id/tvDni_H"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text=" "
+        app:layout_constraintBottom_toBottomOf="@+id/Dni_H"
+        app:layout_constraintStart_toEndOf="@+id/Dni_H" />
+
+    <TextView
+        android:id="@+id/Direccion_H"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Dirección: "
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Dni_H"
+        app:layout_constraintTop_toBottomOf="@+id/Dni_H" />
+
+    <TextView
+        android:id="@+id/tvDireccion_H"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text=" "
+        app:layout_constraintBottom_toBottomOf="@+id/Direccion_H"
+        app:layout_constraintStart_toEndOf="@+id/Direccion_H" />
+
+    <TextView
+        android:id="@+id/Telefono_H"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Telefono: "
+        app:layout_constraintStart_toStartOf="@+id/Direccion_H"
+        app:layout_constraintTop_toBottomOf="@+id/Direccion_H"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvTelefono_H"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text=" "
+        app:layout_constraintBottom_toBottomOf="@+id/Telefono_H"
+        app:layout_constraintStart_toEndOf="@+id/Telefono_H" />
+
+    <TextView
+        android:id="@+id/Fecha_H"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Fecha de Ingreso: "
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Telefono_H"
+        app:layout_constraintTop_toBottomOf="@+id/Telefono_H" />
+
+    <TextView
+        android:id="@+id/tvFecha_H"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text=" "
+        app:layout_constraintBottom_toBottomOf="@+id/Fecha_H"
+        app:layout_constraintStart_toEndOf="@+id/Fecha_H" />
+
+    <Button
+        android:id="@+id/btLeerQR_M"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:text="Escanear QR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
