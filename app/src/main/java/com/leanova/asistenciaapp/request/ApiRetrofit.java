@@ -24,6 +24,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 
 public class ApiRetrofit {
@@ -92,10 +93,17 @@ public class ApiRetrofit {
         Call<UsuarioInfo> getUsuario(@Header("Authorization") String token);
 
         @FormUrlEncoded
-        @POST("asistencia/marcar")
+        @PATCH("asistencia/marcar")
         Call<ResponseBody> marcar(
                 @Field("codIngreso") String codIngreso,
                 @Field("time") String time,
+                @Header("Authorization") String token);
+
+        @FormUrlEncoded
+        @PATCH("usuario/edit/pass")
+        Call<ResponseBody> updatePass(
+                @Field("oldPass") String oldPass,
+                @Field("newPass") String newPass,
                 @Header("Authorization") String token);
     }
 }

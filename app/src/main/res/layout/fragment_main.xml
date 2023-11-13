@@ -122,13 +122,21 @@
         app:layout_constraintStart_toEndOf="@+id/Fecha_H" />
 
     <Button
-        android:id="@+id/btLeerQR_M"
+        android:id="@+id/btCambiarPass_M"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
-        android:text="Escanear QR"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="32dp"
+        android:text="Cambiar Contraseña"
+        app:layout_constraintBottom_toTopOf="@+id/btLeerQR_M"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btLeerQR_M"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:src="@android:drawable/ic_menu_camera"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="159dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

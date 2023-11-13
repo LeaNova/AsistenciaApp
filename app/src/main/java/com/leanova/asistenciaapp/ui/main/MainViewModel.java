@@ -66,29 +66,34 @@ public class MainViewModel extends AndroidViewModel {
             Log.d("Result", result.getContents());
             String[] params = result.getContents().split("&");
 
-            String codIngreso = params[0];
-            String time = params[1];
+            boolean qrCorrecto = params[0].equals("QRasistencia");
+            String codIngreso = params[1];
+            String time = params[2];
 
             //String token = ApiRetrofit.obtenerToken(context);
-            String token = ApiRetrofit.obtenerSession(context).getToken();
+            if(qrCorrecto) {
+                String token = ApiRetrofit.obtenerSession(context).getToken();
 
-            Call<ResponseBody> asistenciaPromesa = ApiRetrofit.getServiceApi().marcar(codIngreso, time, token);
-            asistenciaPromesa.enqueue(new Callback<ResponseBody>() {
-                @Override
-                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                    if(response.isSuccessful()) {
-                        Toast.makeText(context, "Asistencia marcada", Toast.LENGTH_LONG).show();
-                    } else {
-                        Toast.makeText(context, "Error en marcar", Toast.LENGTH_LONG).show();
+                Call<ResponseBody> asistenciaPromesa = ApiRetrofit.getServiceApi().marcar(codIngreso, time, token);
+                asistenciaPromesa.enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        if(response.isSuccessful()) {
+                            Toast.makeText(context, "Asistencia marcada", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(context, "Error en marcar", Toast.LENGTH_LONG).show();
+                        }
                     }
-                }
 
-                @Override
-                public void onFailure(Call<ResponseBody> call, Throwable t) {
-                    Toast.makeText(context, "API error", Toast.LENGTH_SHORT).show();
-                    Log.d("API error", t.getMessage());
-                }
-            });
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        Toast.makeText(context, "API error", Toast.LENGTH_SHORT).show();
+                        Log.d("API error", t.getMessage());
+                    }
+                });
+            } else {
+                Toast.makeText(context, "QR invalido", Toast.LENGTH_LONG).show();
+            }
         }
     }
 }

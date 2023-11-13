@@ -1,9 +1,5 @@
 package com.leanova.asistenciaapp.ui.login;
 
-import static android.hardware.biometrics.BiometricManager.Authenticators.BIOMETRIC_STRONG;
-import static android.hardware.biometrics.BiometricManager.Authenticators.DEVICE_CREDENTIAL;
-
-import android.hardware.biometrics.BiometricManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;

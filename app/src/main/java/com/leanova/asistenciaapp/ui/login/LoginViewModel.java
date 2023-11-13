@@ -81,6 +81,7 @@ public class LoginViewModel extends AndroidViewModel {
 
             @Override
             public void onFailure(Call<String> call, Throwable t) {
+                Toast.makeText(context, "API error", Toast.LENGTH_SHORT).show();
                 Log.d("APIerror", t.getMessage());
             }
         });

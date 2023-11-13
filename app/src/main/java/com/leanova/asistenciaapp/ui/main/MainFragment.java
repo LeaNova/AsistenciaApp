@@ -4,6 +4,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,9 +17,11 @@ import android.view.ViewGroup;
 
 import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
+import com.leanova.asistenciaapp.MainActivity;
 import com.leanova.asistenciaapp.databinding.FragmentMainBinding;
 import com.leanova.asistenciaapp.models.UsuarioInfo;
 import com.leanova.asistenciaapp.ui.CaptureActivityPortraint;
+import com.leanova.asistenciaapp.ui.update.UpdateActivity;
 
 import java.util.Date;
 
@@ -63,6 +66,14 @@ public class MainFragment extends Fragment {
     }
 
     private void armarVista(View view) {
+        binding.btCambiarPassM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), UpdateActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                getContext().startActivity(i);
+            }
+        });
         binding.btLeerQRM.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
